@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "cppbuild",
+        "type": "shell",
+        "command": "/usr/bin/g++",  // Path to your C++ compiler (g++)
+        "args": [
+          "-g",                      // Debugging flags
+          "-O0",                     // Optimization level 0
+          "${file}",                 // Compile the current source file
+          "-o",
+          "${fileDirname}/${fileBasenameNoExtension}"  // Output executable in the same directory with the source file name
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": {
+          "owner": "cpp",
+          "fileLocation": ["relative", "${workspaceFolder}"],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        }
+      }
+    ]
+  }
+  

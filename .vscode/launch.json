@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug C++",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/${fileBasenameNoExtension}", // This assumes your C++ source file has the same name as the executable
+        "args": [], // Command-line arguments for your program
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "cppbuild", // Replace with your build task name (if you have one)
+        "miDebuggerPath": "/usr/bin/gdb", // Path to the GDB executable on your system
+        "linux": {
+          "C_CppProperties": {
+            "compilerPath": "/usr/bin/g++", // Path to your C++ compiler (g++)
+            "cppStandard": "c++17", // C++ standard to use
+            "intelliSenseMode": "gcc-x64",
+            "compilerArgs": ["-g", "-O0"] // Debugging flags
+          }
+        }
+      }
+    ]
+  }
+  
