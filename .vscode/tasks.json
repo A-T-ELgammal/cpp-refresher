@@ -1,34 +1,86 @@
 {
     "version": "2.0.0",
     "tasks": [
-      {
-        "label": "cppbuild",
-        "type": "shell",
-        "command": "/usr/bin/g++",  // Path to your C++ compiler (g++)
-        "args": [
-          "-g",                      // Debugging flags
-          "-O0",                     // Optimization level 0
-          "${file}",                 // Compile the current source file
-          "-o",
-          "${fileDirname}/${fileBasenameNoExtension}"  // Output executable in the same directory with the source file name
-        ],
-        "group": {
-          "kind": "build",
-          "isDefault": true
+        {
+            "type": "shell",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-std=c++23"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
         },
-        "problemMatcher": {
-          "owner": "cpp",
-          "fileLocation": ["relative", "${workspaceFolder}"],
-          "pattern": {
-            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-            "file": 1,
-            "line": 2,
-            "column": 3,
-            "severity": 4,
-            "message": 5
-          }
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc build active file",
+            "command": "/usr/local/bin/gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compiler: /usr/local/bin/g++"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/local/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std = c++23",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compiler: /usr/local/bin/g++"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build active file",
+            "command": "/usr/local/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compiler: /usr/local/bin/g++"
         }
-      }
     ]
-  }
-  
+}
