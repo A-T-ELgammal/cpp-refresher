@@ -1,12 +1,9 @@
 {
-    "editor.tabSize": 4, // Set the default tab size to 4 spaces
-    "editor.insertSpaces": true, // Use spaces instead of tabs
-    "editor.wordWrap": "on", // Enable word wrap
-    "editor.fontSize": 14, // Set the font size to 14
-    "editor.fontFamily": "Consolas, 'Courier New', monospace", // Set the font family
-    "files.autoSave": "afterDelay", // Auto-save files after a delay
-    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
-    "files.associations": {
-        "ostream": "cpp"
-    }, // Path to clang-format executable
+  "files.associations": {
+    "iostream": "cpp",
+    "string": "cpp",
+    "ostream": "cpp",
+    "stdexcept": "cpp"
+  },
+  "C_Cpp.dimInactiveRegions": false
 }

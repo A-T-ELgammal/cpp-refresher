@@ -10,9 +10,8 @@
       "cwd": "${fileDirname}",
       "environment": [],
       "externalConsole": false,
-      "MIMode": "gdb",
-      "preLaunchTask": "C++ Debugger",
-      "miDebuggerPath": "/usr/bin/gdb"
+      "MIMode": "lldb",
+      "preLaunchTask": "C++ Debugger"
     }
   ],
   "version": "2.0.0"
