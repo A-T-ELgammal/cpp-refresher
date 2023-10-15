@@ -6,6 +6,8 @@
 #include "Circle.h"
 #include "DateTime.h"
 #include "AccountLocked.h"
+#include "Pair.h"
+#include "Array.h"
 using namespace std;
 
 // when it pass by value it will be error of copying the object
@@ -44,10 +46,26 @@ any error caught in anyone of it */
 // }
 ////////////////////////////////////
 // create custom exceptions
-void login()
-{
-    throw AccountLocked{};
-}
+// void login()
+// {
+//     throw AccountLocked{};
+// }
+/////////////////////////////////
+// Template
+// template <typename T>
+// T larger(T first, T second)
+// {
+//     return (first > second) ? first : second;
+// }
+// ////////////////////////////////////////////////
+// // multiple template arguments
+
+// template <typename K, typename V>
+// void display(K key, V value)
+// {
+//     cout << key << "=" << value << endl;
+// }
+
 int main()
 {
     // apply inheritance of public members
@@ -137,5 +155,26 @@ int main()
     //     cout << ex.what();
     // }
     ///////////////////////////////////////////////
+    // templates
+    // cout << larger(1.2, 3.4) << endl;
+    // cout << larger(2, 34) << endl;
+    ///////////////////////////////////////////////
+    // explicit type algorithm
+    // if passing two different types to the function that takes same type of template
+    // cout << larger<double>(2.2, 1) << endl;
+    ///////////////////////////////////////////////
+    // display("ahmed", 3);
+    ///////////////////////////////////////////////
+    // Pair<string, int> P{"ahmed", 3};
+    // cout << P.getKey() << endl;
+    ///////////////////////////////////////////////
+    // Array<int> array{10};
+    // array[0] = 1;
+    // cout << array[0] << endl;
+    // Array<string> array{10};
+    // array[0] = "Hello World";
+    // cout << array[0] << endl;
+    // ////////////////////////////////////////////////
+
     return 0;
 }
