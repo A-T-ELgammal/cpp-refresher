@@ -11,9 +11,15 @@ public:
     //  ~Rectangle();
     //  Rectangle(string background) : Shape(background){};
     void setWidth(int width);
+    friend void printHeight(int height);
 
 private:
     int width;
+    int height;
 };
 
+void printHeight(int height)
+{
+    cout << height << endl;
+}
 #endif

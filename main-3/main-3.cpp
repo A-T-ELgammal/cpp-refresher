@@ -8,8 +8,8 @@
 #include "AccountLocked.h"
 #include "Pair.h"
 #include "Array.h"
-using namespace std;
 
+using namespace std;
 // when it pass by value it will be error of copying the object
 // so we should pass by reference to be valid
 // void drowShape(Shape &S)
@@ -174,7 +174,19 @@ int main()
     // Array<string> array{10};
     // array[0] = "Hello World";
     // cout << array[0] << endl;
-    // ////////////////////////////////////////////////
+    ////////////////////////////////////////////////
+    // spaceship operation
+    // int x = 10;
+    // int y = 4;
+
+    // auto as = x <=> y;
+
+    // if (as == strong_ordering::greater)
+    // {
+    //     cout << "less" << endl;
+    // }
+    //////////////////////////////////////////////
+    Rectangle R;
 
     return 0;
 }

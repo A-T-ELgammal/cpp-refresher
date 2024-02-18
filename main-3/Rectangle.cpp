@@ -25,3 +25,8 @@ void Rectangle::setWidth(int width)
 // {
 //     cout << "Rectangle destructor " << endl;
 // }
+
+void printHeight(int height)
+{
+    cout << "Height is : " << height;
+}

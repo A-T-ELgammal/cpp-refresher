@@ -10,6 +10,13 @@ class Circle : public Shape
 public:
     Circle();
     void drow() override;
-};
+    friend int area(Circle &d);
 
+private:
+    int radius;
+};
+int area(Circle &d)
+{
+    return d.radius * d.radius;
+}
 #endif
