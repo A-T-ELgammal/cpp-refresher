@@ -7,7 +7,7 @@
       "args": [
         "-g",
         "-std=c++17",
-        "${workspaceFolder}/Memory_refresher/*.cpp",
+        "${workspaceFolder}/*.cpp",
         "-o",
         "${workspaceFolder}/main"
       ],

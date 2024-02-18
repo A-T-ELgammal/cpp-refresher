@@ -27,24 +27,47 @@ public:
     {
         std::printf("the date is :- %d : %d : %d \n", day, month, year);
     }
+    virtual void display()
+    {
+        std::cout << "Date class" << std::endl;
+    }
 };
-
+class Hour : public Date
+{
+public:
+    void display()
+    {
+        std::cout << "Hour class" << std::endl;
+    }
+};
 int main()
 {
-    Myclass obj;
-    Myclass *ptr = &obj;
-    ptr->myFunction();
+    // Myclass obj;
+    // Myclass *ptr = &obj;
+    // ptr->myFunction();
 
-    Date D, *dPtr;
-    D.setDate(1, 1, 2000);
-    D.printDate();
-    dPtr = &D;
-    dPtr->setDate(1, 2, 2022);
-    dPtr->printDate();
-    // array of objects with as pointer to object
-    Date *dates = new Date[3];
-    dates[0].setDate(2, 4, 1994);
-    dates[0].printDate();
-    
+    // Date D, *dPtr;
+    // D.setDate(1, 1, 2000);
+    // D.printDate();
+    // dPtr = &D;
+    // dPtr->setDate(1, 2, 2022);
+    // dPtr->printDate();
+    // // array of objects with as pointer to object
+    // Date *dates = new Date[3];
+    // dates[0].setDate(2, 4, 1994);
+    // dates[0].printDate();
+    // pointer to inherited object
+    Date *d;
+    Hour h;
+    // std::cout << "Date pointer to object\n";
+    // d->display();
+    // std::cout << "Hour pointer to object\n";
+    // h.display();
+    std::cout << d << std::endl;
+    d = &h;
+    d->display();
+    // std::cout << "Date to Hour pointer to object\n";
+    std::cout << d << std::endl;
+
     return 0;
 }
