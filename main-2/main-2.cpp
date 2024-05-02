@@ -335,17 +335,17 @@ using namespace std;
 //     int year;
 // };
 /////////////////////////////////////////////////////////
-//function that convert from double to string with 2 percision
-    // string numberToString(double number,int percision)
-    // {
-    // stringstream stream;
-    // //use the fixed for floating point and the percision for number of fractial digits 
-    // stream<<fixed<<setprecision(percision)<<number;
-    // string str = stream.str();
-    // return str;
-    // }
+// function that convert from double to string with 2 percision
+//  string numberToString(double number,int percision)
+//  {
+//  stringstream stream;
+//  //use the fixed for floating point and the percision for number of fractial digits
+//  stream<<fixed<<setprecision(percision)<<number;
+//  string str = stream.str();
+//  return str;
+//  }
 ////////////////////////////////////////////////////////
-//function take string with space and 
+// function take string with space and
 
 // struct Movie
 // {
@@ -363,6 +363,18 @@ using namespace std;
 //     return movie;
 // }
 ///////////////////////////////////////////////////////
+// explicit conversion using static_cast
+// pointer conversion in inheritance
+class Base
+{
+public:
+    virtual void print() { cout << "Base" << endl; }
+};
+class Derived : public Base
+{
+public:
+    void print() override { cout << "Derived" << endl; }
+};
 int main()
 {
     // customer myCustomer;
@@ -533,66 +545,66 @@ int main()
     // second way is use getline()
     // getline(file, str);
     ///////////////////////////////////////////
-    //read from csv file and loop for all lines and store them as struct movie , then print one of attributes values
-    // ifstream file;
-    // file.open("data.csv");
-    // if(file.is_open())
-    // {
-    // string str;
-    // getline(file, str);
-    // while (!file.eof())
-    // {
-    //     getline(file, str, ',');
-    //     if (str.empty())
-    //         continue;
-    //     movie movie;
-    //     movie.id = stoi(str);
-    //     getline(file, str,',');
-    //     movie.title = str; 
-    //     getline(file, str);
-    //     movie.year = stoi(str);     
-    //     cout<<movie.title<<endl;
-        
+    // read from csv file and loop for all lines and store them as struct movie , then print one of attributes values
+    //  ifstream file;
+    //  file.open("data.csv");
+    //  if(file.is_open())
+    //  {
+    //  string str;
+    //  getline(file, str);
+    //  while (!file.eof())
+    //  {
+    //      getline(file, str, ',');
+    //      if (str.empty())
+    //          continue;
+    //      movie movie;
+    //      movie.id = stoi(str);
+    //      getline(file, str,',');
+    //      movie.title = str;
+    //      getline(file, str);
+    //      movie.year = stoi(str);
+    //      cout<<movie.title<<endl;
+
     // }
     // }
     // file.close();
     //////////////////////////////////////////////////
-    //writing to binary files 
-    // int numbers[] = {1'000'000,2'000'000,3'000'000};
-    // // ofstream file{"numbers.dat"};
-    // ifstream file{"numbers.dat"};
-    // if(file.is_open())
-    // {
-    //     //dealing with .dat or .bin files will make it 12 bytes instead of 24 back to system 
-    //     // file.write(reinterpret_cast<char*>(&numbers),sizeof(numbers));
-    //     /////////////////////////////////////////////////////////
-    //     //read from binary file
-    //     //init number to store what we read 
-    //     //while loop for all lines and store with pointer cast , then print the number
-    //     // int number; 
-    //     // while(file.read(reinterpret_cast<char*>(&number),sizeof(number)))
-    //     // cout<<number<<endl;
-    //     // file.close();
+    // writing to binary files
+    //  int numbers[] = {1'000'000,2'000'000,3'000'000};
+    //  // ofstream file{"numbers.dat"};
+    //  ifstream file{"numbers.dat"};
+    //  if(file.is_open())
+    //  {
+    //      //dealing with .dat or .bin files will make it 12 bytes instead of 24 back to system
+    //      // file.write(reinterpret_cast<char*>(&numbers),sizeof(numbers));
+    //      /////////////////////////////////////////////////////////
+    //      //read from binary file
+    //      //init number to store what we read
+    //      //while loop for all lines and store with pointer cast , then print the number
+    //      // int number;
+    //      // while(file.read(reinterpret_cast<char*>(&number),sizeof(number)))
+    //      // cout<<number<<endl;
+    //      // file.close();
 
     // }
     ///////////////////////////////////////////////////
-    //working with file streams 
-    // we will use fstreams that include istream and ostream
-    // fstream file;
-    // file.open("file.txt", ios::in | ios::out | ios::app | ios::binary);
-    // if(file.is_open())
-    // {
-    //     file.close();
-    // }
+    // working with file streams
+    //  we will use fstreams that include istream and ostream
+    //  fstream file;
+    //  file.open("file.txt", ios::in | ios::out | ios::app | ios::binary);
+    //  if(file.is_open())
+    //  {
+    //      file.close();
+    //  }
     ///////////////////////////////////////////////////
-    // string streams 
+    // string streams
     // double number = 12.32;
     // stringstream stream;
-    // //use the fixed for floating point and the percision for number of fractial digits 
+    // //use the fixed for floating point and the percision for number of fractial digits
     // stream<<fixed<<setprecision(2)<<number;
     // string str = stream.str();
     // cout<<str<<endl;
-    // //make it as function 
+    // //make it as function
     // cout<< numberToString(12.344354,3)<<endl;
     //////////////////////////////
     // //parsing string
@@ -603,7 +615,7 @@ int main()
     // stream>>first;
     // stream>>second;
     // cout<<first+second<<endl;
-    //apply parseMovie()
+    // apply parseMovie()
     // auto movie  = parseMovie("Terminator 1,1984");
     // cout<<movie.year<<endl;
     /////////////////////////////////////////////////////
@@ -616,6 +628,16 @@ int main()
     /////
     ////
     //
-    
+    // explicit conversion using static_cast of pointers
+    Base *base_ptr = new Derived();
+    base_ptr->print();
+    Derived *derived_ptr = static_cast<Derived *>(base_ptr);
+    derived_ptr->print();
+    // using static_cast for explicit conversion for upcasting and downcasting
+    Derived derived_obj;
+    Base &base_ref = derived_obj; // upcasting implicitly
+
+    Derived *derived_ptr_2 = static_cast<Derived *>(base_ptr);
+    derived_ptr_2->print();
     return 0;
-    }
+}

@@ -344,12 +344,19 @@ int main()
     // great(strFromCharArray("ahmed"));
     ///////////////////////////////////////////////////////////////
     // apply passing by reference of the string
-    char x[6] = "ahmed";
-    string name = StrFromCharArray(x, 6);
-    greet(name);
-    cout << endl
-         << "( " << name << ")";
+    // char x[6] = "ahmed";
+    // string name = StrFromCharArray(x, 6);
+    // greet(name);
+    // cout << endl
+    //      << "( " << name << ")";
     ////////////////////////////////////////////////////////////////
-
+    // implicit vs explicit conversion
+    // using static_cast
+    float x = 3.82356345;
+    // implicit
+    // int x_c = x;
+    int x_c = static_cast<int>(x);
+    cout << x_c;
+    
     return 0;
 }
