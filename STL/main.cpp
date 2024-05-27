@@ -42,6 +42,17 @@ int main()
 
     for (map<char, int>::iterator i = characterCount.begin(); i != characterCount.end(); ++i)
         cout << i->first << "  " << i->second << endl;
+    cout << "////////////////////////////" << endl;
+    // multimap ... ordered map with multi value for same unique key
+    multimap<int, string> mulMap = {
+        {1, "one"},
+        {2, "two"},
+        {2, "second two"},
+        {3, "three"},
+    };
+    for (const auto &itr : mulMap)
+        cout << itr.second << endl;
 
+    
     return 0;
 }
