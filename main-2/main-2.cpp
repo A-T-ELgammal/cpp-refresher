@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iomanip>
 #include <sstream>
+#include <cmath>
 using namespace std;
 
 // applying passing array to function
@@ -639,5 +640,7 @@ int main()
 
     Derived *derived_ptr_2 = static_cast<Derived *>(base_ptr);
     derived_ptr_2->print();
+    cout << M_PI / 2 << endl;
+    cout << M_PI_2;
     return 0;
 }
