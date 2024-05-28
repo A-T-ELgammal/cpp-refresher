@@ -7,9 +7,9 @@
       "args": [
         "-g",
         "-std=c++23",
-        "${workspaceFolder}/STL/*.cpp",
+        "${workspaceFolder}/STL/${fileDirname}.cpp",
         "-o",
-        "${workspaceFolder}/main"
+        "${workspaceFolder}/STL/${fileDirname}"
       ],
       "options": {
         "cwd": "${fileDirname}"
