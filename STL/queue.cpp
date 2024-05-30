@@ -3,6 +3,27 @@
 
 using namespace std;
 
+class Student
+{
+public:
+    int grade;
+    Student(int grade)
+    {
+        this->grade = grade;
+        cout << "Constructor called: " << grade << endl;
+    }
+    Student(const Student &student)
+    {
+        this->grade = student.grade;
+        cout << "Copy constructor called: " << this->grade;
+        cout << endl;
+    }
+    ~Student()
+    {
+        cout << "destructor called: " << this->grade << endl;
+    }
+};
+
 int main()
 {
     queue<int> q;
@@ -26,5 +47,13 @@ int main()
     cout << q1.back() << endl;
     cout << q.empty() << endl;
     cout << (q == q1) << endl;
+    queue<Student> classroom;
+    Student joe(90);
+    classroom.push(joe);
+    classroom.emplace(80);
+    Student copy_constructor = classroom.back();
+    classroom.pop();
+    cout << "after the pop " << endl;
+    // classroom.emplace(80);
     return 0;
 }
