@@ -8,6 +8,7 @@
 #include <limits>
 #include <string>
 #include "utils/greet.h"
+#include <vector>
 
 using namespace std;
 using messaging::greet;
@@ -352,11 +353,21 @@ int main()
     ////////////////////////////////////////////////////////////////
     // implicit vs explicit conversion
     // using static_cast
-    float x = 3.82356345;
-    // implicit
-    // int x_c = x;
-    int x_c = static_cast<int>(x);
-    cout << x_c;
-    
+    // float x = 3.82356345;
+    // // implicit
+    // // int x_c = x;
+    // int x_c = static_cast<int>(x);
+    // cout << x_c;
+    // create and print 2D vector with initial values
+    vector<vector<int>> grid(5, vector<int>(6, 2));
+    for (int row = 0; row < 5; ++row)
+    {
+        for (int column = 0; column < 6; column++)
+        {
+            cout << grid[row][column] << " ";
+        }
+        cout << endl;
+    }
+
     return 0;
 }
