@@ -23,7 +23,11 @@ public:
         cout << "destructor called: " << this->grade << endl;
     }
 };
-
+struct Point
+{
+    int x, y;
+    Point(int xval, int yval) : x(xval), y(yval) {}
+};
 int main()
 {
     queue<int> q;
@@ -55,5 +59,20 @@ int main()
     classroom.pop();
     cout << "after the pop " << endl;
     // classroom.emplace(80);
+    cout << "/////////\\\\\\\\\\" << endl;
+    queue<Point> points;
+
+    Point existingPoint(2, 4);
+    points.push(existingPoint);
+
+    points.emplace(3, 7);
+
+    while (!points.empty())
+    {
+        Point point = points.front();
+        cout << "point x: " << point.x << "point y: " << point.y << endl;
+        points.pop();
+    }
+
     return 0;
 }
